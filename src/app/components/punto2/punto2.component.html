@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+
+        <!--peliculas-->
+
+        <div class="col-8">
+            <div class="row row-cols-2 row-cols-md-3 g-3 card-group">
+                <div class="col" *ngFor="let p of peliculas">
+                    <div class="card h-100 bg-light">
+                        <img src="{{p.poster}}" class="card-img-top" alt="{{p.title}}">
+                        <div class="card-body">
+                          <h5 class="card-title">{{p.title}} ({{p.year}})</h5>
+                          <p class="card-text">{{p.plot}}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item stretched-link">Duracion: {{p.length}}</li>
+                            <li class="list-group-item stretched-link">Puntuacion: {{p.rating}} ({{p.rating_votes}} votos)</li>
+                        </ul>
+                        <a class="list-group-item list-group-item-action active text-center" href="{{p.trailer.link}}">Ver Trailer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--publicidad-->
+
+        <aside class="col-4">
+            <img src="assets/img/aside.jpg" class="img-fluid" alt="aside">
+        </aside>
+    </div>
+</div>

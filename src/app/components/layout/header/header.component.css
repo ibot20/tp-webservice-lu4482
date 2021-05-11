@@ -1,0 +1,10 @@
+nav{
+    background-color: black;
+    padding: 15px;
+    padding-bottom: 0px;
+    border-bottom: 5px rgb(1, 92, 92) solid;
+}
+
+.navbar-nav a:hover{
+    background-color: rgb(1, 92, 92);
+}

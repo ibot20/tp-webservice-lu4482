@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="row">
+
+        <!--Tabla-->
+
+        <div class="col col-md-8 table-responsive d-none d-md-block">
+            <table class="table table-dark table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th colspan="4"><h3 class="text-center">Conversor de Divisas</h3></th>
+                    </tr>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col"><span class="flag flag-us"></span><br>USD</th>
+                      <th scope="col"><span class="flag flag-ar"></span><br>ARS</th>
+                      <th scope="col"><span class="flag flag-uk"></span><br>GBP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <th scope="row"><span class="flag flag-us"></span>1 UDS <br> inverse</th>
+                      <td>1.00000 <br> 1.00000</td>
+                      <td>65.87725 <br> 0.015414</td>
+                      <td>0.811469 <br> 1.232332</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><span class="flag flag-ar"></span>1 ARS <br> inverse</th>
+                      <td>1.087074 <br> 0.919901</td>
+                      <td>1.00000 <br> 1.00000</td>
+                      <td>0.882127 <br> 1.133623</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><span class="flag flag-uk"></span>1 GBP <br> inverse</th>
+                      <td>1.232332 <br> 0.811469</td>
+                      <td>79.95034 <br> 0.012508</td>
+                      <td>1.00000 <br> 1.00000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--Conversor-->
+
+        <div class="col col-md-4 col-12 bg-light formulario">
+            <fieldset>
+                <legend>Conversor de Divisas</legend>
+                <form #conversorForm="ngForm">
+                    <div class="mb-3">
+                      <label for="cantidad" class="form-label">Cantidad</label>
+                      <input type="number" class="form-control" id="cantidad" name="cantidad" [(ngModel)]="fromValue">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="de" class="form-label">De</label>
+                        <select id="de" class="form-select" name="de" [(ngModel)]="fromType">
+                            <option value="GBP">GBP Libra Esterlin</option>
+                            <option value="USD">USD Dólares EEUU</option>
+                            <option value="ARS">ARS Peso Argentino</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="a" class="form-label">A</label>
+                        <select id="a" class="form-select" name="a" [(ngModel)]="toType">
+                            <option value="GBP">GBP Libra Esterlin</option>
+                            <option value="USD">USD Dólares EEUU</option>
+                            <option value="ARS">ARS Peso Argentino</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="disabledTextInput" class="form-label"></label>
+                        <input type="number" id="resultado" class="form-control" name="resultado" [(ngModel)]="resultado" disabled>
+                    </div>
+                    
+                    <div class="row d-grid">
+                        <button type="button" class="col-12 btn btn-primary" (click)="convertir()">Convertir</button>
+                    </div>
+                  </form>
+            </fieldset>
+        </div>
+    </div>
+</div>
